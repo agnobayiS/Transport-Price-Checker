@@ -2,24 +2,24 @@ function TransportPriceChecker (){
     let newRoute 
     let routes = [
         {
-            route: "KHAYELITSHA-CAPE TOWN",
+            route: "KHAYELITSHA-CPT",
             taxiFare: 20,
             busFare: 21
         },
         {
-            route: "CAPE TOWN-KHAYELITSHA",
+            route: "CPT-KHAYELITSHA",
             taxiFare: 20,
             busFare: 21
         },
         {
-            route: "NYANGA-CAPE TOWN",
+            route: "NYANGA-CPT",
             taxiFare: 20,
             busFare: 21
         },
         {
-            route: "CAPE TOWN-NYANGA",
-            taxiFare: 20,
-            busFare: 21
+            route: "CPT-NYANGA",
+            taxiFare: 18,
+            busFare: 19
         }
     ]
 
@@ -49,7 +49,7 @@ function TransportPriceChecker (){
 
     // find specific route and return details
     function getRouteInfo(routeName){
-        return getAllRoutes().find(route => route.route === routeName)
+        return getAllRoutes().find(obj => obj.route === routeName)
     }
 
     return {

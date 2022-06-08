@@ -29,6 +29,26 @@ describe("Testing for my TransportPriceChecker factory function", function() {
                     route: "KHAYELITSHA-CAPE TOWN",
                     taxiFare: 20,
                     busFare: 21
+                },
+                {
+                    route: "KHAYELITSHA-CAPE TOWN",
+                    taxiFare: 20,
+                    busFare: 21
+                },
+                {
+                    route: "CAPE TOWN-KHAYELITSHA",
+                    taxiFare: 20,
+                    busFare: 21
+                },
+                {
+                    route: "NYANGA-CAPE TOWN",
+                    taxiFare: 20,
+                    busFare: 21
+                },
+                {
+                    route: "CAPE TOWN-NYANGA",
+                    taxiFare: 18,
+                    busFare: 19
                 }
             ]
     
@@ -82,6 +102,7 @@ describe("Testing for my TransportPriceChecker factory function", function() {
 
             // get all the available routes
             const results = transportPriceChecker.getRouteInfo("CAPE TOWN-NYANGA")
+            console.log(results)
 
             // test to check if the created route is the same as the one expected
             assert.deepEqual(results, expexted)
