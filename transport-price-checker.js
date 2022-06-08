@@ -26,10 +26,16 @@ function TransportPriceChecker (){
         return routes
     }
 
+    // find specific route and return details
+    function getRouteInfo(routeName){
+        return getAllRoutes().find(route => route.route === routeName)
+    }
+
     return {
         setNewRoute,
         getNewRoute,
         addToRoutes,
-        getAllRoutes
+        getAllRoutes,
+        getRouteInfo
     }
 }
