@@ -31,10 +31,16 @@ button{
     background-color: #D7C49EFF;
     width: 800px;
     margin: 40px auto;
+    
 }
 .secondBackGround{
     background-color: #D7C49EFF;
     width: 800px;
+    margin: 40px auto;
+}
+.ThirdBackGround{
+    background-color: #D7C49EFF;
+    width: 1000px;
     margin: 40px auto;
 }
 
@@ -70,4 +76,12 @@ button{
 .add{
     padding-top: 80px;
     padding-bottom: 30px;
+}
+.radioBtn{
+    padding-left: 80px;
+    display: flex;
+    align-items: center;
+}
+.new{
+    align-items: center;
 }
