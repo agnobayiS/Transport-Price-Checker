@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
+
+body{
+    background-image: url('images/mangopear-creative-A3xpZYjAZyk-unsplash.jpg');
+    background-color: #d7c49eff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 40px 0 40px;
+    color: white;
+}
+button{
+    width: 200px;
+    height: 40px;
+    background: royalblue;
+    color: white;
+    font-weight: bold;
+}
