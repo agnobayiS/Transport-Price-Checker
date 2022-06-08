@@ -1,6 +1,27 @@
 function TransportPriceChecker (){
     let newRoute 
-    let routes = []
+    let routes = [
+        {
+            route: "KHAYELITSHA-CAPE TOWN",
+            taxiFare: 20,
+            busFare: 21
+        },
+        {
+            route: "CAPE TOWN-KHAYELITSHA",
+            taxiFare: 20,
+            busFare: 21
+        },
+        {
+            route: "NYANGA-CAPE TOWN",
+            taxiFare: 20,
+            busFare: 21
+        },
+        {
+            route: "CAPE TOWN-NYANGA",
+            taxiFare: 20,
+            busFare: 21
+        }
+    ]
 
     // set a new route
     function setNewRoute(route, taxiFare, busFare){
