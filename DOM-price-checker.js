@@ -9,4 +9,5 @@ availableRoutes.addEventListener('change', function(){
     console.log(availableRoutes.value)
     const route = pricePlanner.getRouteInfo(availableRoutes.value);
     taxiPrice.value = route.taxiFare;
+    busPrice.value = route.busFare;
 })
