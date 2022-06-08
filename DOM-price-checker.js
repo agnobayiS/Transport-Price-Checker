@@ -14,13 +14,18 @@ const addRoutBtn = document.querySelector('.addRoutBtn');
 const pricePlanner = TransportPriceChecker();
 
 availableRoutes.addEventListener('change', function(){
-    console.log(availableRoutes.value)
     const route = pricePlanner.getRouteInfo(availableRoutes.value);
-    taxiPrice.value = route.taxiFare;
-    busPrice.value = route.busFare;
+    if(route === undefined){
+        taxiPrice.value = "";
+        busPrice.value = ""
+    } else {
+        taxiPrice.value = route.taxiFare;
+        busPrice.value = route.busFare;
+    }
 });
 
 addRoutBtn.addEventListener('click', () =>{
     
 });
+
 
