@@ -8,13 +8,13 @@ function TransportPriceChecker (){
         },
         {
             route: "CPT-KHAYELITSHA",
-            taxiFare: 20,
-            busFare: 21
+            taxiFare: 21,
+            busFare: 22
         },
         {
             route: "NYANGA-CPT",
-            taxiFare: 20,
-            busFare: 21
+            taxiFare: 18,
+            busFare: 19
         },
         {
             route: "CPT-NYANGA",
@@ -49,7 +49,9 @@ function TransportPriceChecker (){
 
     // find specific route and return details
     function getRouteInfo(routeName){
-        return getAllRoutes().find(obj => obj.route === routeName)
+        return getAllRoutes().find(function (obj){
+            return obj.route === routeName
+        })
     }
 
     return {

@@ -26,34 +26,34 @@ describe("Testing for my TransportPriceChecker factory function", function() {
             // the new route created will be an object
             const expexted = [
                 {
-                    route: "KHAYELITSHA-CAPE TOWN",
+                    route: "KHAYELITSHA-CPT",
                     taxiFare: 20,
                     busFare: 21
                 },
                 {
-                    route: "KHAYELITSHA-CAPE TOWN",
-                    taxiFare: 20,
-                    busFare: 21
+                    route: "CPT-KHAYELITSHA",
+                    taxiFare: 21,
+                    busFare: 22
                 },
                 {
-                    route: "CAPE TOWN-KHAYELITSHA",
-                    taxiFare: 20,
-                    busFare: 21
-                },
-                {
-                    route: "NYANGA-CAPE TOWN",
-                    taxiFare: 20,
-                    busFare: 21
-                },
-                {
-                    route: "CAPE TOWN-NYANGA",
+                    route: "NYANGA-CPT",
                     taxiFare: 18,
                     busFare: 19
+                },
+                {
+                    route: "CPT-NYANGA",
+                    taxiFare: 18,
+                    busFare: 19
+                },
+                {
+                    route: "KHAYELITSHA-BEL",
+                    taxiFare: 20,
+                    busFare: 21
                 }
             ]
     
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("KHAYELITSHA-CAPE TOWN", 20, 21)
+            transportPriceChecker.setNewRoute("KHAYELITSHA-BEL", 20, 21)
     
             // add new route to available
             transportPriceChecker.addToRoutes(transportPriceChecker.getNewRoute())
@@ -102,7 +102,6 @@ describe("Testing for my TransportPriceChecker factory function", function() {
 
             // get all the available routes
             const results = transportPriceChecker.getRouteInfo("CAPE TOWN-NYANGA")
-            console.log(results)
 
             // test to check if the created route is the same as the one expected
             assert.deepEqual(results, expexted)

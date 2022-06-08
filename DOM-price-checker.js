@@ -7,7 +7,6 @@ const pricePlanner = TransportPriceChecker();
 
 availableRoutes.addEventListener('change', function(){
     const route = pricePlanner.getRouteInfo(availableRoutes.value);
-<<<<<<< HEAD
     if(route === undefined){
         taxiPrice.value = "";
         busPrice.value = ""
@@ -15,8 +14,4 @@ availableRoutes.addEventListener('change', function(){
         taxiPrice.value = route.taxiFare;
         busPrice.value = route.busFare;
     }
-=======
-    taxiPrice.value = route.taxiFare;
-    busPrice.value = route.busFare;
->>>>>>> c306e7b4b1cfcb979321289f8455f392075260d8
 })
