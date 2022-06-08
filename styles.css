@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
-
 body{
     background-image: url('images/mangopear-creative-A3xpZYjAZyk-unsplash.jpg');
     background-color: #d7c49eff;
@@ -24,4 +23,51 @@ button{
     background: royalblue;
     color: white;
     font-weight: bold;
+}
+
+
+.backGround{
+
+    background-color: #D7C49EFF;
+    width: 800px;
+    margin: 40px auto;
+}
+.secondBackGround{
+    background-color: #D7C49EFF;
+    width: 800px;
+    margin: 40px auto;
+}
+
+.title{
+    text-align: center;
+}
+
+.startBtn{
+    text-align: center;
+}
+.getStartedBtn{
+    height: 50px;
+    width: 150px;
+    background-color:rgb(142, 139, 163) ;
+    color: white;
+}
+.addRout{
+    height: 50px;
+    width: 150px;
+    
+}
+.textBox{
+    
+    height: 30px;
+}
+.name-input{
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+.add{
+    padding-top: 80px;
+    padding-bottom: 30px;
 }
