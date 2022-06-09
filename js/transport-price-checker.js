@@ -26,7 +26,7 @@ function TransportPriceChecker (getRoutes){
     // set a new route
     function setNewRoute(route, taxiFare, busFare){
         newRoute = {
-            route,
+            route: route.toUpperCase(),
             taxiFare,
             busFare
         }
