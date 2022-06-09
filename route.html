@@ -71,16 +71,38 @@
 
                 <!-- calculate cost per trips widget  -->
                 <div class="col-4">
-                    <h3>Number of trips</h3>
-                    <input class="textBox tripNumber" type="number" placeholder="Enter Trip number"/>
-                    <div class="radioBtn">
-                        <input class="radio" name="btn" type="radio" value="BUS" /> BUS
-                        <input class="radio" name="btn" type="radio" value="TAXI" /> TAXI
-                    </div>
+                    <h3>Calculate for trips</h3>
+                    <table>
+                        <tr>
+                            <td>
+                                No. of trips: 
+                            </td>
+                            <td>
+                                <input class="textBox tripNumber" type="number" placeholder="Enter Trip number"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Type:
+                            </td>
+                            <td>
+                                <div class="radioBtn">
+                                    <input class="radio" name="btn" type="radio" value="BUS" /> BUS
+                                    <input class="radio" name="btn" type="radio" value="TAXI" /> TAXI
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Show Total:
+                            </td>
+                            <td>
+                                <input class="textBox Total" type="text" readonly />
+                            </td>
+                        </tr>
+                    </table>
                     <p class="errorMessage"></p>
                     <button class="addRout calculateBtn" type="button" name="button">CALCULATE</button>
-                    <h5> TOTAL TRIP COST </h5>
-                    <input class="textBox Total" type="text" readonly />
                 </div>
                 <!-- offset -->
                 <div class="col-1"></div>
