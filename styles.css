@@ -78,6 +78,8 @@ nav{
     margin: 40px auto;
 } */
 
+
+
 .title{
     text-align: center;
 }
@@ -118,4 +120,40 @@ nav{
 }
 .new{
     align-items: center;
+}
+@media only screen and (max-width: 400px) {
+
+    body{
+        display: flex;
+        width: 400px;
+    
+    }
+    .backGround{
+        background-color: #D7C49EFF;
+        width: 100%;
+        margin: 10px auto;
+        /* padding-top: 20px; */
+        height: 1200px;
+    }
+    .secondBackGround{
+        background-color: #D7C49EFF;
+        width: 100%;
+        /* margin: 40px auto; */
+        height: 1200px;
+       
+    }
+    nav{
+        max-width: 400px;
+        width: 100%;
+    }
+    .calculate{
+        margin-left: 10px;
+    }
+    .addRout{
+        margin-right: 400px;
+        
+    }
+    .Total{
+        margin-left: 0px;
+    }
 }
