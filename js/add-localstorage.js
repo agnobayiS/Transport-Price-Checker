@@ -9,8 +9,6 @@ const noRouteAdded = document.querySelector('.noRouteAdded');
 
 const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
 
-const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
-
 addRoutBtn.addEventListener("click", function() {
     // create new route
     const location = departLocation.value+"-"+arrivalLocation.value;
