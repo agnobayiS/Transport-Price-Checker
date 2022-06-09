@@ -6,12 +6,12 @@ describe("Testing for my TransportPriceChecker factory function", function() {
             // the new route created will be an object
             const expexted = {
                 route: "KHAYELITSHA-CAPE TOWN",
-                taxiFare: 20,
-                busFare: 21
+                taxiFare: 21,
+                busFare: 19
             }
     
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("KHAYELITSHA-CAPE TOWN", 20, 21)
+            transportPriceChecker.setNewRoute("KHAYELITSHA-CAPE TOWN", 21, 19)
     
             // get the route that was created
             const results = transportPriceChecker.getNewRoute()
@@ -27,23 +27,23 @@ describe("Testing for my TransportPriceChecker factory function", function() {
             const expexted = [
                 {
                     route: "KHAYELITSHA-CPT",
-                    taxiFare: 20,
-                    busFare: 21
+                    taxiFare: 21,
+                    busFare: 19
                 },
                 {
                     route: "CPT-KHAYELITSHA",
-                    taxiFare: 21,
-                    busFare: 22
+                    taxiFare: 22,
+                    busFare: 19
                 },
                 {
                     route: "NYANGA-CPT",
-                    taxiFare: 18,
-                    busFare: 19
+                    taxiFare: 20,
+                    busFare: 14
                 },
                 {
                     route: "CPT-NYANGA",
-                    taxiFare: 18,
-                    busFare: 19
+                    taxiFare: 20,
+                    busFare: 14
                 },
                 {
                     route: "KHAYELITSHA-BEL",
@@ -70,25 +70,25 @@ describe("Testing for my TransportPriceChecker factory function", function() {
     
             // ADDING MULTIPLE ROUTES TO TEST FINDING ONE ROUTE
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("KHAYELITSHA-CAPE TOWN", 20, 21)
+            transportPriceChecker.setNewRoute("KHAYELITSHA-CAPE TOWN", 21, 19)
     
             // add new route to available
             transportPriceChecker.addToRoutes(transportPriceChecker.getNewRoute())
 
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("CAPE TOWN-KHAYELITSHA", 21, 22)
+            transportPriceChecker.setNewRoute("CAPE TOWN-KHAYELITSHA", 22, 19)
     
             // add new route to available
             transportPriceChecker.addToRoutes(transportPriceChecker.getNewRoute())
 
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("NYANGA-CAPE TOWN", 18, 19)
+            transportPriceChecker.setNewRoute("NYANGA-CAPE TOWN", 20, 14)
     
             // add new route to available
             transportPriceChecker.addToRoutes(transportPriceChecker.getNewRoute())
 
             // to set a new route you need to the route the taxi fare and the bus fare
-            transportPriceChecker.setNewRoute("CAPE TOWN-NYANGA", 18, 19)
+            transportPriceChecker.setNewRoute("CAPE TOWN-NYANGA", 20, 14)
     
             // add new route to available
             transportPriceChecker.addToRoutes(transportPriceChecker.getNewRoute())
@@ -96,8 +96,8 @@ describe("Testing for my TransportPriceChecker factory function", function() {
             // the new route created will be an object
             const expexted = {
                 route: "CAPE TOWN-NYANGA",
-                taxiFare: 18,
-                busFare: 19
+                taxiFare: 20,
+                busFare: 14
             }
 
             // get all the available routes
@@ -112,7 +112,7 @@ describe("Testing for my TransportPriceChecker factory function", function() {
         it("should be able to calculate how much it will cost from \"KHAYELITSHA-CPT\" using \"TAXI\"", function() {
             const transportPriceChecker = TransportPriceChecker()
 
-            const expected = 60
+            const expected = 63
             const results = transportPriceChecker.calculateTrips("KHAYELITSHA-CPT", "TAXI", 3)
 
             assert.equal(results, expected)
@@ -121,7 +121,7 @@ describe("Testing for my TransportPriceChecker factory function", function() {
         it("should be able to calculate how much it will cost from \"KHAYELITSHA-CPT\" using \"BUS\"", function() {
             const transportPriceChecker = TransportPriceChecker()
 
-            const expected = 84
+            const expected = 76
             const results = transportPriceChecker.calculateTrips("KHAYELITSHA-CPT", "BUS", 4)
 
             assert.equal(results, expected)
@@ -130,7 +130,7 @@ describe("Testing for my TransportPriceChecker factory function", function() {
         it("should be able to calculate how much it will cost from \"NYANGA-CPT\" using \"TAXI\"", function() {
             const transportPriceChecker = TransportPriceChecker()
 
-            const expected = 54
+            const expected = 60
             const results = transportPriceChecker.calculateTrips("NYANGA-CPT", "TAXI", 3)
 
             assert.equal(results, expected)
@@ -139,7 +139,7 @@ describe("Testing for my TransportPriceChecker factory function", function() {
         it("should be able to calculate how much it will cost from \"NYANGA-CPT\" using \"BUS\"", function() {
             const transportPriceChecker = TransportPriceChecker()
 
-            const expected = 76
+            const expected = 56
             const results = transportPriceChecker.calculateTrips("NYANGA-CPT", "BUS", 4)
 
             assert.equal(results, expected)
