@@ -15,8 +15,7 @@ addRoutBtn.addEventListener("click", function() {
     pricePlanner.addToRoutes(pricePlanner.getNewRoute())
 
     // update the routes on localstorage
-    localStorage.setItem("myRoutes", JSON.stringify(pricePlanner.getAllRoutes()))
-
+    localStorage.setItem("myRoutes", JSON.stringify(pricePlanner.getAllRoutes()));
     // send the user to the available routes page
     // setTimeout(function() {
     //     window.location.href = window.location.host+"/route.html"
