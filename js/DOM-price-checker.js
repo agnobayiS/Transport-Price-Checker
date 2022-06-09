@@ -23,15 +23,15 @@ availableRoutes.addEventListener('change', function(){
         taxiPrice.value = "";
         busPrice.value = ""
     } else {
-        taxiPrice.value = route.taxiFare;
-        busPrice.value = route.busFare;
+        taxiPrice.value = "R" + route.taxiFare.toFixed(2);
+        busPrice.value = "R" + route.busFare.toFixed(2);
     }
 });
 
 calculateButton.addEventListener('click', function() {
     const radioButton = document.querySelector('.radio:checked');
     const priceTrips = pricePlanner.calculateTrips(availableRoutes.value,radioButton.value,tripNumber.value);
-    Total.value = priceTrips;
+    Total.value = "R " + priceTrips.toFixed(2);
 });
 
 
