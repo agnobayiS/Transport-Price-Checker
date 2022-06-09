@@ -107,4 +107,42 @@ describe("Testing for my TransportPriceChecker factory function", function() {
             assert.deepEqual(results, expexted)
         })
     })
+
+    describe("making a plan for multiple trips", function() {
+        it("should be able to calculate how much it will cost from \"KHAYELITSHA-CPT\" using \"TAXI\"", function() {
+            const transportPriceChecker = TransportPriceChecker()
+
+            const expected = 60
+            const results = transportPriceChecker.calculateTrips("KHAYELITSHA-CPT", "TAXI", 3)
+
+            assert.equal(results, expected)
+        })
+
+        it("should be able to calculate how much it will cost from \"KHAYELITSHA-CPT\" using \"BUS\"", function() {
+            const transportPriceChecker = TransportPriceChecker()
+
+            const expected = 84
+            const results = transportPriceChecker.calculateTrips("KHAYELITSHA-CPT", "BUS", 4)
+
+            assert.equal(results, expected)
+        })
+
+        it("should be able to calculate how much it will cost from \"NYANGA-CPT\" using \"TAXI\"", function() {
+            const transportPriceChecker = TransportPriceChecker()
+
+            const expected = 54
+            const results = transportPriceChecker.calculateTrips("NYANGA-CPT", "TAXI", 3)
+
+            assert.equal(results, expected)
+        })
+
+        it("should be able to calculate how much it will cost from \"NYANGA-CPT\" using \"BUS\"", function() {
+            const transportPriceChecker = TransportPriceChecker()
+
+            const expected = 76
+            const results = transportPriceChecker.calculateTrips("NYANGA-CPT", "BUS", 4)
+
+            assert.equal(results, expected)
+        })
+    })
 })
