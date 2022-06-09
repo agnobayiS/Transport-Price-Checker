@@ -54,11 +54,22 @@ function TransportPriceChecker (){
         })
     }
 
+    //  calculate cost for number of trips
+    function calculateTrips(route, transport, trips){
+        const info = getRouteInfo(route)
+        if(transport === "TAXI"){
+            return info.taxiFare * trips
+        } else if(transport === "BUS"){
+            return info.busFare * trips
+        }
+    }
+
     return {
         setNewRoute,
         getNewRoute,
         addToRoutes,
         getAllRoutes,
-        getRouteInfo
+        getRouteInfo,
+        calculateTrips
     }
 }
