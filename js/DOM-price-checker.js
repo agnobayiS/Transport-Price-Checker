@@ -3,6 +3,7 @@ const availableRoutes = document.querySelector("#route");
 const busPrice = document.querySelector(".busPrice");
 const taxiPrice = document.querySelector(".taxiPrice");
 const numberOfTrips = document.querySelector(".tripNumber");
+const errorMessage = document.querySelector(".errorMessage");
 
 //make a plan section
 const tripNumber = document.querySelector('.tripNumber');
