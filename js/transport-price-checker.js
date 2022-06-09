@@ -3,23 +3,23 @@ function TransportPriceChecker (getRoutes){
     let routes = getRoutes || [
         {
             route: "KHAYELITSHA-CPT",
-            taxiFare: 20,
-            busFare: 21
+            taxiFare: 21,
+            busFare: 19
         },
         {
             route: "CPT-KHAYELITSHA",
-            taxiFare: 21,
-            busFare: 22
+            taxiFare: 22,
+            busFare: 19
         },
         {
             route: "NYANGA-CPT",
-            taxiFare: 18,
-            busFare: 19
+            taxiFare: 20,
+            busFare: 14
         },
         {
             route: "CPT-NYANGA",
-            taxiFare: 18,
-            busFare: 19
+            taxiFare: 20,
+            busFare: 14
         }
     ]
 

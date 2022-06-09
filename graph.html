@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="simple-grid.css">
     <script src="js/transport-price-checker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+        integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .header {
+            vertical-align: middle;
+            padding: 20px 80px 0px 80px;
+        }
+
+        nav {
+            border-collapse: collapse;
+            background-color: #D7C49EFF;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.09);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+
+        .nav-link:hover {
+            background-color: rgb(142, 139, 163);
+        }
+
+        .nav-link {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            transition: 0.2s ease-out;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
+
+    <div class="header">
+        <nav id="nav-bar">
+            <a href="./index.html" class="nav-link">HOME</a>
+            <a href="./route.html" class="nav-link">AVAILABLE-ROUTES</a>
+            <a href="./addRout.html" class="nav-link">ADD-ROUTE</a>
+            <!-- <a href= "./graph.html" class="nav-link">GRAPH-PRICE</a> -->
+        </nav>
+    </div>
+    <div class="container" style="margin-top: 50px;">
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
@@ -20,49 +66,50 @@
         </div>
     </div>
     <script>
-    const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: pricePlanner.getAllRoutes().map(function(obj) {
-                return obj.route
-            }),
-            datasets: [{
-                label: 'Taxis',
-                data: pricePlanner.getAllRoutes().map(function(obj) {
-                return obj.taxiFare
-            }),
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                ],
-                borderWidth: 1
-            },{
-                label: 'Buses',
-                data: pricePlanner.getAllRoutes().map(function(obj) {
-                return obj.busFare
-            }),
-                backgroundColor: [
-                    'rgba(57, 131, 238, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(57, 131, 238, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: pricePlanner.getAllRoutes().map(function (obj) {
+                    return obj.route
+                }),
+                datasets: [{
+                    label: 'Taxis',
+                    data: pricePlanner.getAllRoutes().map(function (obj) {
+                        return obj.taxiFare
+                    }),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }, {
+                    label: 'Buses',
+                    data: pricePlanner.getAllRoutes().map(function (obj) {
+                        return obj.busFare
+                    }),
+                    backgroundColor: [
+                        'rgba(57, 131, 238, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(57, 131, 238, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
     </script>
 
 </body>
+
 </html>
