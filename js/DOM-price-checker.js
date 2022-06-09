@@ -7,8 +7,8 @@ const numberOfTrips = document.querySelector(".tripNumber");
 //For addRoute.html
 const departLocation = document.querySelector('.depart');
 const arrivalLocation = document.querySelector('.arrive');
-const taxiPrice2 = document.querySelector('.taxiPrice');
-const busPrice2 = document.querySelector('.busPrice');
+const taxiPrice2 = document.querySelector('.taxiPrice2');
+const busPrice2 = document.querySelector('.busPrice2');
 const addRoutBtn = document.querySelector('.addRoutBtn');
 
 const pricePlanner = TransportPriceChecker();
@@ -26,6 +26,9 @@ availableRoutes.addEventListener('change', function(){
 
 addRoutBtn.addEventListener('click', () =>{
     
+
+const justChecking = pricePlanner.setNewRoute(departLocation.value,arrivalLocation.value,taxiPrice2.value,busPrice2.value);
+    console.log(justChecking);
 });
 
 
