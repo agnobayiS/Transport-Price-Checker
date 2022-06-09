@@ -1,6 +1,6 @@
-function TransportPriceChecker (){
+function TransportPriceChecker (getRoutes){
     let newRoute 
-    let routes = [
+    let routes = getRoutes || [
         {
             route: "KHAYELITSHA-CPT",
             taxiFare: 20,

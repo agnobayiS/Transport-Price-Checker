@@ -4,18 +4,12 @@ const busPrice = document.querySelector(".busPrice");
 const taxiPrice = document.querySelector(".taxiPrice");
 const numberOfTrips = document.querySelector(".tripNumber");
 
-//For addRoute.html
-const departLocation = document.querySelector('.depart');
-const arrivalLocation = document.querySelector('.arrive');
-const taxiPrice2 = document.querySelector('.taxiPrice2');
-const busPrice2 = document.querySelector('.busPrice2');
-const addRoutBtn = document.querySelector('.addRoutBtn');
 //make a plan section
 const tripNumber = document.querySelector('.tripNumber');
 const Total = document.querySelector('.Total');
 const calculateButton = document.querySelector('.calculateBtn');
 
-const pricePlanner = TransportPriceChecker();
+const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
 
 availableRoutes.addEventListener('change', function(){
     const route = pricePlanner.getRouteInfo(availableRoutes.value);

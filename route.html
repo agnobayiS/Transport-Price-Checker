@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="simple-grid.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <title>ROUTS-ADDED</title>
 </head>
 
@@ -33,17 +34,17 @@
         <div class="container" style="height: 15px;">
             <div class="row">
 
-                <div class="col-12  ">
-                    <P class="title" style="color:black; font-size:x-large;">Choose your destinations or add your own if
-                        its not in the list below.</P>
-                        <label for="Routes" style="margin-left: 10px;font-weight: bold;">CHOOSE A ROUTE:</label>
-                            <select name="Routes" id="route" style="height: 30px;width: 150px; margin-left: 40px;">
-                            <option value="ROUTES" selected>ROUTES</option>
-                            <option value="KHAYELITSHA-CPT">KHAYELITSHA-CPT</option>
-                            <option value="CPT-KHAYELITSHA">CPT-KHAYELITSHA</option>
-                            <option value="NYANGA-CPT">NYANGA-CPT</option>
-                            <option value="CPT-NYANGA">CPT-NYANGA</option>
-                            </select>
+                <div class="col-12">
+                    <p class="title" style="color:black; font-size:x-large;">Choose your destinations or add your own if its not in the list below.</p>
+                    <label for="Routes" style="margin-left: 10px;font-weight: bold;">CHOOSE A ROUTE:</label>
+                    <script type="text/x-template" class="routesTemplate">
+                        <option value="ROUTES" selected>ROUTES</option>
+                        {{#each routes}}
+                        <option value="{{route}}">{{route}}</option>
+                        {{/each}}
+                    </script>
+                    <select name="Routes" id="route" style="height: 30px;width: 150px; margin-left: 40px;">
+                    </select>
                 </div>
             </div>
 
@@ -152,6 +153,7 @@
     </div>
     <script src="js/transport-price-checker.js"></script>
     <script src="js/DOM-price-checker.js"></script>
+    <script src="js/handlebars.js"></script>
 </body>
 
 </html>
