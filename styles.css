@@ -59,21 +59,21 @@ nav{
 
 .backGround{
     background-color: #D7C49EFF;
-    width: 800px;
+    width: 1000px;
     margin: 10px auto;
     padding-top: 20px;
 }
 .secondBackGround{
     background-color: #D7C49EFF;
-    width: 800px;
+    width: 1000px;
     margin: 40px auto;
    
 }
-.ThirdBackGround{
+/* .ThirdBackGround{
     background-color: #D7C49EFF;
-    width: 800px;
+    width: 1000px;
     margin: 40px auto;
-}
+} */
 
 .title{
     text-align: center;
@@ -109,7 +109,7 @@ nav{
     padding-bottom: 30px;
 }
 .radioBtn{
-    padding-left: 80px;
+    padding-left: 85px;
     display: flex;
     align-items: center;
 }
