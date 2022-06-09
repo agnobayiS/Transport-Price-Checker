@@ -26,6 +26,7 @@ calculateButton.addEventListener('click', function() {
     const radioButton = document.querySelector('.radio:checked');
     const priceTrips = pricePlanner.calculateTrips(availableRoutes.value,radioButton.value,tripNumber.value);
     Total.value = "R " + priceTrips.toFixed(2);
+    
 });
 
 
