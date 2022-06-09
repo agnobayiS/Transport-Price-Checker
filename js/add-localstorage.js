@@ -6,6 +6,8 @@ const taxiPrice2 = document.querySelector('.taxiPrice2');
 const busPrice2 = document.querySelector('.busPrice2');
 const addRoutBtn = document.querySelector('.addRoutBtn');
 
+const pricePlanner = TransportPriceChecker(JSON.parse(localStorage.getItem("myRoutes")));
+
 addRoutBtn.addEventListener("click", function() {
     // create new route
     const location = departLocation.value+"-"+arrivalLocation.value;
@@ -17,6 +19,11 @@ addRoutBtn.addEventListener("click", function() {
     // update the routes on localstorage
     localStorage.setItem("myRoutes", JSON.stringify(pricePlanner.getAllRoutes()))
 
+    // after button click clear inputs
+    departLocation.value = ""
+    arrivalLocation.value = ""
+    taxiPrice2.value = ""
+    busPrice2.value = ""
     // send the user to the available routes page
     // setTimeout(function() {
     //     window.location.href = window.location.host+"/route.html"
