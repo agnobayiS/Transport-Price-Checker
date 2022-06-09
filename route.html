@@ -21,139 +21,73 @@
         </nav>
     </div>
 
-    <div class=" container secondBackGround">
-        <div class="container" style="height: 15px;">
+    <div class="container secondBackGround tp">
             <div class="row">
-
-                <div class="col-12  ">
-                    <h2 class="title">AVAILABLE ROUTES</h2>
-                </div>
+                <h1 class="center">Transport Cost Planner</h1>
+                <p class="title">Choose your destinations or <a href="./addRout.html">add your own</a> if its not in the list below.</p>
             </div>
-
-        </div>
-        <div class="container" style="height: 15px;">
             <div class="row">
+                <!-- offset -->
+                <div class="col-2"></div>
 
-                <div class="col-12">
-                    <p class="title" style="color:black; font-size:x-large;">Choose your destinations or add your own if its not in the list below.</p>
-                    <label for="Routes" style="margin-left: 10px;font-weight: bold;">CHOOSE A ROUTE:</label>
+                <!-- show price widge -->
+                <div class="col-4">
+                    <h3>Choose route</h3>
                     <script type="text/x-template" class="routesTemplate">
-                        <option value="ROUTES" selected>ROUTES</option>
+                        <option value="ROUTES" selected>SELECT ROUTE</option>
                         {{#each routes}}
                         <option value="{{route}}">{{route}}</option>
                         {{/each}}
                     </script>
-                    <select name="Routes" id="route" style="height: 30px;width: 150px; margin-left: 40px;">
-                    </select>
+                    <table>
+                        <tr>
+                            <td>
+                                <h5>Routes:</h5>
+                            </td>
+                            <td>
+                                <select class="textBox" style="width: 157px;" name="Routes" id="route"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Bus price: </h5>
+                            </td>
+                            <td>
+                                <input class="textBox busPrice" type="text" readonly />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Taxi price: </h5>
+                            </td>
+                            <td>
+                                <input class="textBox taxiPrice" type="text" readonly />
+                            </td>
+                        </tr>
+                    </table>
                 </div>
+                <!-- offset -->
+                <div class="col-1"></div>
+
+                <!-- calculate cost per trips widget  -->
+                <div class="col-4">
+                    <h3>Number of trips</h3>
+                    <input class="textBox tripNumber" type="number" placeholder="Enter Trip number"/>
+                    <div class="radioBtn">
+                        <input class="radio" name="btn" type="radio" value="BUS" /> BUS
+                        <input class="radio" name="btn" type="radio" value="TAXI" /> TAXI
+                    </div>
+                    <p class="errorMessage"></p>
+                    <button class="addRout calculateBtn" type="button" name="button">CALCULATE</button>
+                    <h5> TOTAL TRIP COST </h5>
+                    <input class="textBox Total" type="text" readonly />
+                </div>
+                <!-- offset -->
+                <div class="col-1"></div>
             </div>
-
-        </div>
-        <div class="container one">
-           
-        </div>
-
-        <div class="container">
-            <div class="column">
-
-                <div class="col-12  ">
-                    <h2 class="title"> TRANSPORT PRICE</h2>
-                </div>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="column">
-
-                <div class="col name-input   BusPrice">
-                    <h5 style="padding-right: 20px;">BUS PRICE</h5>
-                    <input class="textBox busPrice" type="text" style="margin-left: 30px; padding-right: 100px;"
-                        readonly />
-                </div>
-                <div class="col name-input TaxiPrice">
-                    <h5 style="padding-right: 20px;">TAXI PRICE</h5>
-                    <input class="textBox taxiPrice" type="text" style="margin-left: 25px; padding-right: 100px;"
-                        readonly />
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="column">
-
-                <div class="col-12  ">
-                    <!-- <p class="title" style="font-size: x-large; color: black;"> plan for your next trips below </p> -->
-                </div>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="column">
-
-                <div class="col-12  ">
-                    <h2 class="title"> MAKE A PLAN </h2>
-                </div>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="column">
-
-                <div class="col name-input">
-                    <h3 style="padding-right: 20px;"> NUMBER OF TRIPS </h3>
-                    <input class="textBox tripNumber" type="number" placeholder="Enter Trip number"
-                        style="margin-left: 100px;width: 250px" />
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="row  new">
-
-                <div class="col name-input">
-                    <h5 style="padding-right: 20px; margin-left: 20px;"> MODE OF TRANSPORT </h5>
-
-                </div>
-                <div class="col radioBtn">
-
-                    <P style="color:black;">BUS</P>
-                    <input class="radio" name="btn" type="radio" value="BUS" />
-
-
-                    <P style="color: black; padding-left: 30px;">TAXI</P>
-                    <input class="radio" name="btn" type="radio" value="TAXI" />
-
-
-                </div>
-
-            </div>
-        </div>
-        <div class="container  calculate">
-            <div class="row">
-                <div class="col rout calculate" style="margin-left: 340px;">
-                    <p class="errorMessage">woza friday</p>
-                    <button class=" addRout calculateBtn" type="button" name="button">CALCULATE</button>
-
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="column">
-
-                <div class="col name-input">
-                    <h5 style="padding-right: 20px;"> TOTAL TRIP COST </h5>
-                    <input class="textBox Total" type="text" style="margin-left: 155px;padding-right: 100px;"
-                        readonly />
-                </div>
-
-            </div>
-        </div>
-
-
     </div>
     <script src="js/transport-price-checker.js"></script>
     <script src="js/DOM-price-checker.js"></script>
     <script src="js/handlebars.js"></script>
 </body>
-
 </html>
